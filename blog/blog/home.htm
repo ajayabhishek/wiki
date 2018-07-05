@@ -1,0 +1,58 @@
+{% extends "blog/blog.htm" %}
+
+{% block title %}Loged Out{% endblock %}
+
+{% block content %}
+<center><h2>You are Loged Out</h2></center>
+<p>Click on the buttons inside the tabbed menu:</p>
+
+<div id="London" class="tabcontent">
+  <h3>List of CSIT Books for your download</h3>
+  <u1><a href="{{ MEDIA_ROOT }}/media/documents/4th_sem_csit_notes.zip" download>4th Semester notes</a></u1>
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h3>Python projects</h3>
+  <p>Unique pythone made exe games & applications as projects.</p> 
+<a href="{{ MEDIA_ROOT }}/media/documents/Racethem.py" download>Click here to download</a>
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h3>Django</h3>
+  <p>Want to create your own website ? COMING SOON !!</p>
+</div>
+
+<div id="Oslo" class="tabcontent">
+  <h3>Create your own blogging account</h3>
+  <p><a href="/blog/blogform">Create Account</a></p>
+</div>
+
+<button class="tablink" onclick="openCity('London', this, 'red')" id="defaultOpen">Books</button>
+<button class="tablink" onclick="openCity('Paris', this, 'green')">Python Projects</button>
+<button class="tablink" onclick="openCity('Tokyo', this, 'blue')">Django Projects</button>
+<button class="tablink" onclick="openCity('Oslo', this, 'orange')">Create Account</button>
+
+<script>
+function openCity(cityName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(cityName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+<br>
+  {{data}}
+<h3>User can click here to login!!</h3>
+<a href='/login/'>Login</a>
+
+{% endblock %}

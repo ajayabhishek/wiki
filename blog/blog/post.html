@@ -1,0 +1,11 @@
+{% extends "blog/blog.htm" %}
+
+{% block content %}
+{% for d in data %}
+<br>
+<h5><U>{{d.author|safe}}</U></h5>
+<br>
+{{d.content|safe}}
+<h4>{{d.created_date}}</h4>
+{% endfor %}
+{% endblock %}

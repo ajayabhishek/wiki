@@ -1,0 +1,62 @@
+<html>
+{% load static %}
+<head>
+<title>Practice</title>
+<style>
+body{
+     background-color:#f6f6f6;
+     background-repeat:no repeat;
+     background-position:right top;
+     background-attachment:fixed;
+}
+h1{
+    font-color: black;
+    margin-left: 400px;
+} 
+<link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}" type = "text/css"/>
+h2{
+   color:black;
+}
+p{
+   background-color:rgba(120,50,50,0.7);
+   font-size:30;
+   margin:10px;
+}
+table{
+  font-size:30px;
+  background-color:rgb(195,195,195);
+  margin:30px;
+       border:10px groove green;
+       padding:30px;
+ } 
+</style>
+</head>
+<body> 
+
+<textarea id="content"></textarea>
+
+<h1><u><emp><a href="http://www.soa.ac.in/">Click here to visit Soa University !!</a></emp></u></h1>
+<img src ="{% static 'a.jpg' %}">
+<marquee style="color: #FF0000; font-size: 12pt; font-weight: bold; font-family: Verdana" direction="left" height="20" behavior="alternate" scrollamount="10" background-color:hsla(255,0,0,0)>User can entery data for category ID & category name in this form !!</marquee><br> 
+<h2>
+<form method="POST">
+{% csrf_token %}
+{{data}}
+<input type="submit">
+<br>
+<br><a href='/blog/home'>Logout</a>
+</form>
+</h2>
+<p>You are a verified user in this site.Please dont share your user ID & Form</p>
+<script src="{% static 'ckeditor/ckeditor.js' %}">
+</script>
+
+<script>
+
+			CKEDITOR.replace( 'content' );
+		
+</script>
+
+
+</body>
+</html>

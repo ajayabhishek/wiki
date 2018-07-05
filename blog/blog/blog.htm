@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Blog-Ajay Abhishek</title>
+	<meta charset="utf-8" />
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css' %}" type = "text/css"/>
+	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
+	
+	<style type="text/css">
+.h4,h4{ font-size:12px;
+}
+u1{ list-style-type:circle,square;
+    list-style-position:inside;
+}
+
+        .tabs {
+  float: none;
+  font-size:12px;
+  list-style: none;
+  position: relative;
+  margin: 50px 0 0 10px;
+  text-align: left;
+  box-sizing: border-box;
+  font-family:verdana;
+  clear: both;
+}
+
+.tabs .tab
+{
+	float: left;
+	margin-right: 10px;
+}
+
+.content
+{
+	position: absolute;
+	background-color: white;
+	width: 100%;
+	left: 0px;
+}
+
+.tabs .tab:nth-of-type(1) .content
+{
+	z-index: 1;
+}
+
+.tab:target a
+{
+	font-weight: bold;
+}
+
+.tab:target .content
+{
+	z-index: 1;
+}
+
+         .topleft{
+                 position: fixed;
+                 bottom: 1;
+                 right: 0;
+                 width: 120px;
+                 font-size:15px;
+                }
+         h5{ font-weight:bold;
+             font-size:20px;
+            }
+         div.col-sm-10{ background-color:MediumTurquoise;
+                  font-size:50px;
+                  color:Aquamarine;
+                  }
+         div.col-sm-2{ background-color:LightGreen;
+                  }
+
+         div.col-sm-3{ width:80%;
+                       max-width:80%;
+                  }
+         div.container{ width:50%;
+                  }
+		html,
+		body {
+		  height:100%
+		}
+
+body {font-family: "Lato", sans-serif;}
+
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 50px;
+    text-align: center;
+}
+
+#London {background-color:red;}
+#Paris {background-color:green;}
+#Tokyo {background-color:blue;}
+#Oslo {background-color:orange;}
+
+
+
+
+
+	</style>
+</head>
+
+<body class="body" style="background-color:PowderBlue ;">
+	<div class="container-fluid" style="min-height:95%; ">
+		<div class="row">
+			  <div class="col-sm-2">
+				  <br>
+				  <center>
+					<img src="{% static 'blog/img/profile.jpg' %}" class="img-responsive" style='max-height:200px;' alt="face">
+				  </center>
+			  </div>
+			  <div class="col-sm-10">
+                                  <div class="tabs">
+		
+		<div class="tab" id="tab1">
+			<a href="/blog/home">Home</a>
+			
+		</div>
+		
+		<div class="tab" id="tab2">
+			<a href="/blog/blogshow">Blog</a>
+			
+		</div>
+		
+		<div class="tab" id="tab3">
+			<a href="#tab3">Tab 3</a>
+		</div>
+
+	
+	</div>
+
+				  <center>
+				  <b><u>Welcome to Anonymous Blogger!!</u></b>
+				  </center>
+<marquee style="color: #FF0000; font-size: 12pt; font-weight: bold; font-family: Verdana" direction="left" height="20" behavior="alternate" scrollamount="10" background-color="hsla(255,0,0,1)">Website in construction !! You will be getting updates soon</marquee><br> 
+
+			  </div>
+		</div>
+		<div class="row">
+		  <div class="col-sm-2">
+		  <br>
+
+		  <br>
+		   <!-- Great, til you resize. -->
+			<!--<div class="well bs-sidebar affix" id="sidebar" style="background-color:#fff">-->
+			<div class="well bs-sidebar" id="sidebar" style="background-color: #9ef2c2">
+			  <ul class="nav nav-pills nav-stacked">
+				<li><a href='/blog/home'>Home</a></li>
+                                <li><a href='/blog/blogform'>Post a blog</a></li>
+				<li><a href='/blog/blogshow'>Latest Blogs</a></li>
+                                <li><a href='/blog/profile'>Account</a></li>
+			  </ul>
+			</div> <!--well bs-sidebar affix-->
+		  </div> <!--col-sm-2-->
+		  <div class="col-sm-3">
+		        
+			<div class='container-fluid' style="background-color:PaleTurquoise;">
+
+                        <div class="container">
+                           <div class="topleft">
+                                 <p><b>Contact Admin<b></p>
+                                <div class="well bs-sidebar" id="sidebar" style="background-color:#E0FFFF">
+			  <ul class="nav nav-pills nav-stacked">
+				<li><a href='https://www.facebook.com/ajay.abhishek.73'>Facebook</a></li>
+				<li><a href='https://www.instagram.com/ajay.abhishek'>Instagram</a></li>
+                                <li><a href='https://twitter.com/AjayAbhishek4'>Twitter</a></li>
+				<li><a href='https://github.com/ajayabhishek'>GitHub</a></li>
+			  </ul>
+			         </div>
+                           </div>
+                        </div>
+
+			   {% block content %}
+			   {% endblock %}	
+			</div>
+		  </div>
+		</div> 
+	</div>
+	<footer>
+		<div class="container-fluid" style='margin-left:15px'>
+			<p><a href="#" target="blank">Contact</a> | <a href="#" target="blank">LinkedIn</a> | <a href="#" target="blank">Twitter</a> | <a href="#" target="blank">Google+</a></p>
+		</div>
+	</footer>	
+	
+</body>
+
+</html>

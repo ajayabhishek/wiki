@@ -1,0 +1,23 @@
+{% extends 'blog/blog.htm' %}
+
+{% block content %}
+  <p><a href='/login/'>Login</a></p>
+  <p>OR</p>
+  <h2>Sign up</h2>
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
+        {{ field.label_tag | safe }}<br>
+        {{ field | safe }}
+        {% if field.help_text %}
+          <small style="color: grey">{{ field.help_text | safe }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      </p>
+    {% endfor %}
+    <button type="submit">Sign up</button>
+  </form>
+{% endblock %}

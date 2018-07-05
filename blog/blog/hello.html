@@ -1,0 +1,12 @@
+{% extends "blog/blog.htm" %}
+
+{% block title %}Log out{% endblock %}
+
+{% block content %}
+<form method="POST" >
+    {% csrf_token %}
+    {{ data.media }}
+    {{ data }}
+    <input type="submit">
+</form>
+{% endblock %}

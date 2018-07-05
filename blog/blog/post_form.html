@@ -1,0 +1,12 @@
+{% extends "quiz/blog.html" %}
+
+{% block title %}Log out{% endblock %}
+
+{% block content %}
+<form method="POST" action="">
+    {% csrf_token %}
+    {{ form.media }}
+    {{ form }}
+    <input type="submit" value="Save">
+</form>
+{% endblock %}

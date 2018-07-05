@@ -1,0 +1,26 @@
+{% extends "blog/blog.htm" %}
+
+{% block title%}Contents Here{% endblock %}
+{% block content %}
+<table>
+<tr>
+<th>Author</th>
+<th>Title</th>
+</tr>
+{% for d in data %}
+<tr>
+<td>{{d.author}}</td>
+<td>{{d.title}}</td>
+{% endfor %}
+</tr>
+</table>
+<br>
+<br>
+<p>Content is</p>
+{% for c in data %}
+{{c.content|safe}}
+{% endfor %}
+<br>
+
+<br><a href='/blog/home'>Logout</a>
+{% endblock %}

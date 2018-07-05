@@ -1,0 +1,18 @@
+{% extends 'blog/blog.htm' %}
+
+{% load staticfiles %}
+
+{% block title %}{{ user.username }}{% endblock %}
+
+{% block content %}
+
+<h5><u>Welcome to your account : </u></h5>
+<p>User Name :<h5>{{ profile }}</h5></p>
+<p><a href='/logout'>Logout</a></p>
+<p><u>These are the blogs that you have published</u></p>
+{% for d in data %}
+
+<p>{{ d.created_date }}</p>
+<p>{{ d.content|safe }}</p>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends "blog/blog.htm" %}
+
+{% block content %}
+	{% for d in data %}
+	  <h5>{{ d.author }}<a href="/blog/content"> {{d.title}}</a></h5>
+	{% endfor %}
+{% endblock %}
